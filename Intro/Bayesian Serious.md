@@ -1,13 +1,13 @@
 # Bayesian Serious
 
-## 1. Basic Probability [Thats too simple] 
+## 1. Basic Probability [That‘s too simple] 
 Probability must be between 0 and 1             
 Probability +  Complementary Probability = 1               
 Probability of all possible events must add up to 1                 
 
 
 ## 2. Contingency Table [Very important Thing]
-![](Bayesian%20Serious/90BABBC0-E12D-40FD-9450-99F00C645BBB%202.png)
+![](Bayesian%20Serious/90BABBC0-E12D-40FD-9450-99F00C645BBB%203.png)
 
 ### First thing to know about contingency table
 Two variables in the above table            
@@ -18,7 +18,7 @@ Draw each variable on one axis, with probability of all possible events.
 x轴相加 = 1， y轴相加 = 1               
 
 ### Second thing to know about contingency table
-![](Bayesian%20Serious/38809B51-741F-4F84-82A1-5A927F4944B7%202.png)
+![](Bayesian%20Serious/38809B51-741F-4F84-82A1-5A927F4944B7%203.png)
 
 
 Sum of the first row = right most value of second row           
@@ -79,6 +79,39 @@ P(W | T) = P(W) for any combinations of values W -> (Sunny, Cloudy, Rainy), T ->
 
 
 ## Fill a contingency table
+Suppose 1% of people are infected with flu                                   
+If you have the flu, you are tested positive with 95% probability                 
+If you are not infected, you are tested positive with 10 probability               
+
+**Convert to mathematical expression**
+P(flu) = 1%
+P(positive | flu) = 95%
+P(positive | ~flu) = 10%
+
+The mathematical expression is sufficient to populate a  contingency table
+![](Bayesian%20Serious/D2D70C74-4EAE-4F45-8A1F-11584C6EC99E.png)
+
+P(pos & flu) = P(flu) * P(pos|flu) = 0.01 * 0.95 [convert conditional to joint]          
+P(pos & ~flu) = P(~flu) * P(pos|~flu) = 0.99 * 0.1 [convert conditional to joint]           
+P(pos) = P(pos & flu) + P(pos & ~flu) = 0.01 * 0.95 + 0.99 * 0.1 [column sum]          
+P(flu) = P(neg & flu) + P(pos & flu) [row sum]          
+P(neg & flu) = P(flu) - P(pos & flu) = 0.01 - 0.01 % 0.95          
+P(~flu) = P(neg & ~flu) + P(pos & ~flu) [row sum]              
+P(neg & ~flu) = P(~flu) - P(pos & ~flu) = 0.99 - 0.99 * 0.1   
+
+这时候我们把 P(flu) 叫做prior probability     
+            
+
+## 4. Wrap up [知道这些东西，你就可以填表了]
+1. P(A | B) = P(A & B) / P(B)                
+2. P(A1|B) + P(A2|B) + P(A3|B) + ….. +P(An|B) = P(B)            
+3. P(B1|A) + P(B2|A) + P(B3|A) + ….. +P(Bn|A) = P(A)           
+第二条和第三条相当于：           
+	行之和等于最右边的行总计。                   
+	列之和等于最下面的列总计            
+4. 变量A可能的事件为 A1, A2, A3…..           
+P(A1) + P(~A1) = 1         
+P(A1) + … + P(An) = 1             
 
 
 
