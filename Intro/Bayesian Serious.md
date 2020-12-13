@@ -7,7 +7,7 @@ Probability of all possible events must add up to 1
 
 
 ## 2. Contingency Table [Very important Thing]
-![](Bayesian%20Serious/90BABBC0-E12D-40FD-9450-99F00C645BBB%203.png)
+![](Bayesian%20Serious/90BABBC0-E12D-40FD-9450-99F00C645BBB%204.png)
 
 ### First thing to know about contingency table
 Two variables in the above table            
@@ -18,7 +18,7 @@ Draw each variable on one axis, with probability of all possible events.
 x轴相加 = 1， y轴相加 = 1               
 
 ### Second thing to know about contingency table
-![](Bayesian%20Serious/38809B51-741F-4F84-82A1-5A927F4944B7%203.png)
+![](Bayesian%20Serious/38809B51-741F-4F84-82A1-5A927F4944B7%204.png)
 
 
 Sum of the first row = right most value of second row           
@@ -89,7 +89,7 @@ P(positive | flu) = 95%
 P(positive | ~flu) = 10%
 
 The mathematical expression is sufficient to populate a  contingency table
-![](Bayesian%20Serious/D2D70C74-4EAE-4F45-8A1F-11584C6EC99E.png)
+![](Bayesian%20Serious/D2D70C74-4EAE-4F45-8A1F-11584C6EC99E%202.png)
 
 P(pos & flu) = P(flu) * P(pos|flu) = 0.01 * 0.95 [convert conditional to joint]          
 P(pos & ~flu) = P(~flu) * P(pos|~flu) = 0.99 * 0.1 [convert conditional to joint]           
@@ -110,8 +110,49 @@ P(neg & ~flu) = P(~flu) - P(pos & ~flu) = 0.99 - 0.99 * 0.1
 	行之和等于最右边的行总计。                   
 	列之和等于最下面的列总计            
 4. 变量A可能的事件为 A1, A2, A3…..           
-P(A1) + P(~A1) = 1         
-P(A1) + … + P(An) = 1             
+P(A1) + P(~A1) = 1               
+P(A1) + … + P(An) = 1                           
+
+
+
+## OverArching problem 
+
+**Variables:**
+Customer Type: Hospital, Doctor’s office
+Number of products: 1, >=2   
+
+**Question:**
+Given a customer bought 1 product, what is the probability that the customer is a hospital customer. 
+
+**Given:**    
+Prior probabilities:      
+	P(Hospital) = 0.25,      
+	P(Doctor Office) = 1 - P(Hospital) = 0.75   
+   
+Conditional probabilities:(Sum of probability over all events condition on 1 event of other variables = 1 ) 
+
+这个地方，不是contingency table 里面的Joint probability, 而是likelihood              
+	P(Prod=1 |Hospital)   = 0.9          
+	P(Prod>=2 | Hospital) =  0.1        
+
+	P(Prod = 1 | Doctor Office) = 0.8         
+	P(Prod >=2 | Doctor Office) = 0.2           
+
+ 
+P(Hospital | Prod = 1) = P(Hospital) * P(Prod = 1 |Hospital) /  P(Prod = 1)             
+= 0.25 * 0.9 / P(Prod = 1)                
+
+P(Prod = 1) = P(Prod = 1 | Hospital) * P(Hospital) +  P(Doctor Office) * P(Prod = 1|Doctor Office)               
+0.25 *  0.9 + 0.75 *  0.8 = 0.825                      
+
+P(Hospital | Prod = 1) = 0.25 * 0.9 / 0.825 = 0.272727                  
+
+
+
+
+
+
+      
 
 
 
