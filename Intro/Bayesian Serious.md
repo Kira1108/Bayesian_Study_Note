@@ -6,8 +6,8 @@ Probability +  Complementary Probability = 1
 Probability of all possible events must add up to 1                 
 
 
-## 2. Contingency Table [Very important Thing]
-![](Bayesian%20Serious/90BABBC0-E12D-40FD-9450-99F00C645BBB%204.png)
+## 2. Bayes theorem & Contingency Table [Very important Thing]
+![](Bayesian%20Serious/90BABBC0-E12D-40FD-9450-99F00C645BBB.png)
 
 ### First thing to know about contingency table
 Two variables in the above table            
@@ -18,7 +18,7 @@ Draw each variable on one axis, with probability of all possible events.
 x轴相加 = 1， y轴相加 = 1               
 
 ### Second thing to know about contingency table
-![](Bayesian%20Serious/38809B51-741F-4F84-82A1-5A927F4944B7%204.png)
+![](Bayesian%20Serious/38809B51-741F-4F84-82A1-5A927F4944B7.png)
 
 
 Sum of the first row = right most value of second row           
@@ -89,7 +89,7 @@ P(positive | flu) = 95%
 P(positive | ~flu) = 10%
 
 The mathematical expression is sufficient to populate a  contingency table
-![](Bayesian%20Serious/D2D70C74-4EAE-4F45-8A1F-11584C6EC99E%202.png)
+![](Bayesian%20Serious/D2D70C74-4EAE-4F45-8A1F-11584C6EC99E.png)
 
 P(pos & flu) = P(flu) * P(pos|flu) = 0.01 * 0.95 [convert conditional to joint]          
 P(pos & ~flu) = P(~flu) * P(pos|~flu) = 0.99 * 0.1 [convert conditional to joint]           
@@ -140,12 +140,23 @@ Conditional probabilities:(Sum of probability over all events condition on 1 eve
 
  
 P(Hospital | Prod = 1) = P(Hospital) * P(Prod = 1 |Hospital) /  P(Prod = 1)             
-= 0.25 * 0.9 / P(Prod = 1)                
+= 0.25 * 0.9 / P(Prod = 1)                   
 
-P(Prod = 1) = P(Prod = 1 | Hospital) * P(Hospital) +  P(Doctor Office) * P(Prod = 1|Doctor Office)               
-0.25 *  0.9 + 0.75 *  0.8 = 0.825                      
+P(Prod = 1) = P(Prod = 1 | Hospital) * P(Hospital) +  P(Doctor Office) * P(Prod = 1|Doctor Office)                 
+0.25 *  0.9 + 0.75 *  0.8 = 0.825                         
 
-P(Hospital | Prod = 1) = 0.25 * 0.9 / 0.825 = 0.272727                  
+P(Hospital | Prod = 1) = 0.25 * 0.9 / 0.825 = 0.272727     
+
+这个例子的不同之处在于，我们事先知道的Likelihood，要构造出一个contingency table， 我们需要先计算一下 Joint Probability， 然后才能填表。         
+
+![](Bayesian%20Serious/9C0BC7E8-28A6-473B-8D5C-201BF6653338.png)
+         
+
+## Monty hall problem
+![](Bayesian%20Serious/93327E5C-CC4E-4CF8-8AD6-02EAC135140E.png)
+
+1. 这里重要的一个人把问题分解成表格的形式                     
+2. 另外就是每一个单元格开始的时候，知道的是likelihood，所以要计算一下Joint              
 
 
 
